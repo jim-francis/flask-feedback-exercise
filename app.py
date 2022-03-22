@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, session, flash
-from models import connect_db, db, User
+from models import connect_db, db, User, Feedback
 from forms import RegisterForm, LoginForm
 
 app = Flask(__name__)
