@@ -54,4 +54,8 @@ def login_form():
 
 @app.route('/secret')
 def secret_page():
-    return "You made it!"
+    if "username" not in session:
+        flash("You must be logged in to view") 
+        return redirect("/login")
+    else:
+        return "You made it!"
