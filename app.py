@@ -52,6 +52,11 @@ def login_form():
         
     return render_template('login.html', form=form)
 
+@app.route('/logout')
+def logout():
+    session.pop("username")
+    return redirect('/')
+
 @app.route('/secret')
 def secret_page():
     if "username" not in session:
